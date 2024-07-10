@@ -1,29 +1,32 @@
 {
-  "name": "enginya-notes",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "wrangler pages dev",
-    "deploy": "$npm_execpath run build && wrangler pages deploy"
-  },
-  "dependencies": {
-    "hono": "^4.4.12",
-    "honox": "^0.1.23"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240529.0",
-    "@hono/vite-cloudflare-pages": "^0.4.2",
-    "@hono/vite-dev-server": "^0.13.0",
-    "@hono/vite-ssg": "^0.1.0",
-    "@mdx-js/rollup": "^3.0.1",
-    "autoprefixer": "^10.4.19",
-    "biome": "^0.3.3",
-    "postcss": "^8.4.39",
-    "remark-frontmatter": "^5.0.0",
-    "remark-mdx-frontmatter": "^5.0.0",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.2.12",
-    "wrangler": "^3.57.2"
-  }
+	"name": "enginya-notes",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"lint:fix": "biome lint --fix ./",
+		"format": "biome format --write ./",
+		"build": "vite build",
+		"preview": "wrangler pages dev",
+		"deploy": "$npm_execpath run build && wrangler pages deploy"
+	},
+	"dependencies": {
+		"hono": "^4.4.12",
+		"honox": "^0.1.23"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@cloudflare/workers-types": "^4.20240529.0",
+		"@hono/vite-cloudflare-pages": "^0.4.2",
+		"@hono/vite-dev-server": "^0.13.0",
+		"@hono/vite-ssg": "^0.1.0",
+		"@mdx-js/rollup": "^3.0.1",
+		"autoprefixer": "^10.4.19",
+		"biome": "^0.3.3",
+		"postcss": "^8.4.39",
+		"remark-frontmatter": "^5.0.0",
+		"remark-mdx-frontmatter": "^5.0.0",
+		"tailwindcss": "^3.4.4",
+		"vite": "^5.2.12",
+		"wrangler": "^3.57.2"
+	}
 }

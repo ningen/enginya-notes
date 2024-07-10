@@ -12,28 +12,28 @@ import mdx from "@mdx-js/rollup";
 const entry = "./app/server.ts";
 
 export default defineConfig(({ mode }) => {
-  if (mode === "client") {
-    return {
-      build: {
-        rollupOptions: {
-          input: ["/app/style.css"],
-          output: {
-            assetFileNames: "static/assets/[name].[ext]",
-          },
-        },
-      },
-      plugins: [client()],
-    };
-  }
+	if (mode === "client") {
+		return {
+			build: {
+				rollupOptions: {
+					input: ["/app/style.css"],
+					output: {
+						assetFileNames: "static/assets/[name].[ext]",
+					},
+				},
+			},
+			plugins: [client()],
+		};
+	}
 
-  return {
-    plugins: [
-      honox(),
-      pages(),
-      devServer({
-        adapter,
-      }),
-      ssg({ entry }),
-    ],
-  };
+	return {
+		plugins: [
+			honox(),
+			pages(),
+			devServer({
+				adapter,
+			}),
+			ssg({ entry }),
+		],
+	};
 });
